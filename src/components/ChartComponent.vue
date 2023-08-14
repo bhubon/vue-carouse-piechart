@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, onBeforeUnmount } from 'vue';
 
 let chart = null
 let newItem = ref(16)
@@ -36,6 +36,10 @@ onMounted(() => {
     const ctx = document.getElementById('chart')
     chart = new Chart(ctx, config);
 
+})
+
+onBeforeUnmount(() => {
+    // nothing to do here fot this task
 })
 
 function updateChart() {

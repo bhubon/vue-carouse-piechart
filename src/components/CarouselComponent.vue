@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted, nextTick } from 'vue';
+import { ref, onMounted,onBeforeUnmount, nextTick } from 'vue';
 const items = ref([
     'https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1467&q=80',
     'https://images.unsplash.com/photo-1505691938895-1758d7feb511?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
@@ -23,6 +23,10 @@ function addNewitem() {
 
 onMounted(() => {
     carousel = new Flickity('#carousel', {})
+})
+
+onBeforeUnmount(()=>{
+    // nothing to do here fot this task
 })
 
 </script>
